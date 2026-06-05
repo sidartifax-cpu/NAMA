@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The history and legacy of NAMA — New Amsterdam Musical Association. Founded 1904, the oldest African-American musical organization in the United States.">
+  <title>Our Legacy — NAMA Harlem | New Amsterdam Musical Association Since 1904</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-hero-image {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      margin-bottom: 80px;
+      box-shadow: var(--shadow-lg);
+      filter: brightness(0.82);
+    }
+    .mission-card {
+      background: linear-gradient(135deg, var(--charcoal), var(--navy-mid));
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius-xl);
+      padding: 60px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mission-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 40px;
+      font-family: var(--font-display);
+      font-size: 14rem;
+      color: rgba(201,168,76,0.06);
+      line-height: 1;
+    }
+    .mission-card__quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      color: var(--ivory);
+      line-height: 1.65;
+      position: relative;
+      z-index: 1;
+    }
+    .mission-card__source {
+      margin-top: 28px;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .timeline-full {
+      position: relative;
+      padding-left: 60px;
+      margin-top: 48px;
+    }
+    .timeline-full::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold), rgba(201,168,76,0.1));
+    }
+    .timeline-entry {
+      position: relative;
+      padding-bottom: 48px;
+    }
+    .timeline-entry:last-child { padding-bottom: 0; }
+    .timeline-entry__dot {
+      position: absolute;
+      left: -49px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.2);
+    }
+    .timeline-entry__year {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .timeline-entry__title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .timeline-entry__text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .member-card {
+      background: var(--charcoal);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .member-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+    .member-card__initial {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .member-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .member-card__era {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .member-card__desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+    .landmark-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: var(--radius-full);
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 768px) {
+      .members-grid { grid-template-columns: 1fr; }
+      .mission-card { padding: 40px 32px; }
+      .timeline-full { padding-left: 40px; }
+      .timeline-entry__dot { left: -33px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    🏛️ NAMA's Brownstone Renovation Campaign is active — &nbsp;
+    <a href="support.html">Help us preserve this Historic Landmark →</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/nama-crest.png" alt="NAMA crest" class="navbar__logo-img">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">NAMA Harlem</span>
+          <span class="navbar__logo-sub">Est. 1904 · New Amsterdam Musical Association</span>
+        </div>
+      </a>
+      <ul class="navbar__nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="about.html" class="active">Our Legacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="support.html" class="btn btn--burgundy btn--sm">Donate</a>
+        <button class="navbar__hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-overlay">
+    <button class="nav-overlay__close">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="visit.html">Visit NAMA</a>
+    <a href="about.html">Our Legacy</a>
+    <a href="support.html">Support &amp; Donate</a>
+    <a href="support.html" class="btn btn--gold" style="margin-top:12px">Donate Now</a>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Home</a> <span>›</span> <span>Our Legacy</span>
+      </div>
+      <span class="section-label">New Amsterdam Musical Association</span>
+      <h1 class="page-hero__title">120 Years of Harlem's<br>Musical Legacy</h1>
+      <p class="page-hero__subtitle">
+        NAMA is not just a venue — it's a living institution. The oldest African-American musical organization in the United States, headquartered in the same Harlem brownstone for over a century.
+      </p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero Image -->
+    <section class="section" style="padding-top: 60px; padding-bottom: 0;">
+      <div class="container">
+        <img src="images/brownstone-day.jpg" alt="The historic NAMA brownstone at 107 W 130th St" class="about-hero-image fade-in">
+      </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="section section--mid" id="mission">
+      <div class="container">
+        <div class="grid-2" style="gap: 80px; align-items: center;">
+          <div class="fade-in">
+            <span class="section-label">Our Mission</span>
+            <h2 class="section-title" style="margin-bottom:24px;">What NAMA Stands For</h2>
+            <div class="gold-divider"></div>
+
+            <div class="mission-card">
+              <p class="mission-card__quote">
+                "To voluntarily promote and encourage the study and production of instrumental music in all the various branches; to draw together trained musicians in the State of New York, in a musical association for mutual intercourse and encouragement and to establish in the City of New York, a central meeting place for the instruction and for social intercourse between its members."
+              </p>
+              <p class="mission-card__source">— NAMA Mission Statement, 1904</p>
+            </div>
+          </div>
+
+          <div class="fade-in fade-in-delay-2">
+            <span class="section-label">Our Vision Today</span>
+            <h3 class="section-title" style="font-size:1.6rem; margin-bottom:20px;">Community, Culture &amp; Legacy — Continued</h3>
+            <p style="color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:24px; font-size:0.97rem;">
+              NAMA's vision for the 21st century is rooted in the same values as its founding: to be the central gathering place for Black musicians and music lovers in New York City, to support artists at every stage of their careers, and to keep Harlem's musical culture alive and thriving.
+            </p>
+            <p style="color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:32px; font-size:0.97rem;">
+              Today, NAMA operates as a full-service nonprofit with a Historic Landmark brownstone at its heart. Through live performances, open jams, community nights, and the ongoing renovation campaign, NAMA is building a bridge between its extraordinary past and the next century of Black music in Harlem.
+            </p>
+            <div class="landmark-badge">
+              <i class="fa fa-landmark"></i>
+              NYC Historic Landmark · 107 W 130th Street Since 1904
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Timeline -->
+    <section class="section" id="history">
+      <div class="container">
+        <div class="grid-2" style="gap:80px; align-items:start;">
+          <div>
+            <span class="section-label fade-in">Our History</span>
+            <h2 class="section-title fade-in">A Century in the Making</h2>
+            <div class="gold-divider fade-in"></div>
+
+            <div class="timeline-full fade-in">
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">1904</div>
+                <h3 class="timeline-entry__title">NAMA is Founded in Harlem</h3>
+                <p class="timeline-entry__text">
+                  The New Amsterdam Musical Association is established in New York City as the first African-American music union. Black musicians, excluded from the all-white American Federation of Musicians Local 310, create their own organization to support, educate, and unite musicians of color. NAMA sets up at 107 West 130th Street — the same address it occupies over 120 years later.
+                </p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">1910s – 1920s</div>
+                <h3 class="timeline-entry__title">The Harlem Renaissance Era</h3>
+                <p class="timeline-entry__text">
+                  NAMA becomes a vital center during the explosion of Black art, music, and culture known as the Harlem Renaissance. Legendary members including James Reese Europe — bandleader, military officer, and pioneering jazz figure — pass through NAMA's doors. The brownstone is a social and professional hub for Harlem's most important musicians.
+                </p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">1930s – 1960s</div>
+                <h3 class="timeline-entry__title">Swing, Bebop &amp; the Golden Era</h3>
+                <p class="timeline-entry__text">
+                  Through the swing era, bebop revolution, and the golden age of jazz, NAMA remains a gathering place for Black musicians in New York. As the music industry and union politics evolve, NAMA continues its mission of mutual support and cultural preservation in Harlem.
+                </p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">1990s – 2000s</div>
+                <h3 class="timeline-entry__title">Community Revival</h3>
+                <p class="timeline-entry__text">
+                  A dedicated group of NAMA members relaunches the organization's community programming. Open jams, educational events, and eventually the Lion's Den series, Monday Night Jams, and the Blues &amp; Poetry Series give the organization a new public profile while keeping its community-first values intact.
+                </p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">2022</div>
+                <h3 class="timeline-entry__title">Centennial Celebration &amp; Historic Landmark Status</h3>
+                <p class="timeline-entry__text">
+                  NAMA marks an extraordinary milestone — 100 years headquartered at the same Harlem address. The brownstone is recognized as a Historic Landmark. A Centennial Fundraiser Gala brings together the community to celebrate a century of service and launch the Building Renovation Fund.
+                </p>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-entry__dot"></div>
+                <div class="timeline-entry__year">2024 – Present</div>
+                <h3 class="timeline-entry__title">Renovation &amp; Renaissance</h3>
+                <p class="timeline-entry__text">
+                  The NAMA Brownstone Renovation Campaign is underway. With community donations and partnerships, essential repairs and upgrades to the Historic Landmark building have begun. NAMA enters its second century with renewed momentum — weekly events, growing membership, and a vision for the next generation of Black music in Harlem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in fade-in-delay-2">
+            <img src="images/venue-interior.jpg" alt="NAMA venue interior" style="width:100%; height:340px; object-fit:cover; border-radius: var(--radius-lg); box-shadow:var(--shadow-lg); margin-bottom:28px;">
+            <img src="images/jazz-performance.jpg" alt="Live performance at NAMA" style="width:100%; height:260px; object-fit:cover; border-radius: var(--radius-lg); box-shadow:var(--shadow-lg);">
+
+            <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: var(--radius-lg); padding: 28px 32px; margin-top:28px;">
+              <h4 style="color:var(--gold); font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:14px;">NAMA By the Numbers</h4>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div>
+                  <div style="font-family:var(--font-heading); font-size:2rem; color:var(--gold); font-weight:700; line-height:1;">120+</div>
+                  <div style="font-size:0.75rem; color:var(--smoke); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Years in Harlem</div>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading); font-size:2rem; color:var(--gold); font-weight:700; line-height:1;">#1</div>
+                  <div style="font-size:0.75rem; color:var(--smoke); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Oldest Black Music Org USA</div>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading); font-size:2rem; color:var(--gold); font-weight:700; line-height:1;">100%</div>
+                  <div style="font-size:0.75rem; color:var(--smoke); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Volunteer-Run Nonprofit</div>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading); font-size:2rem; color:var(--gold); font-weight:700; line-height:1;">1</div>
+                  <div style="font-size:0.75rem; color:var(--smoke); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Address, Always — 107 W 130th</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notable Members -->
+    <section class="section section--charcoal" id="members">
+      <div class="container">
+        <span class="section-label fade-in">Legendary Members</span>
+        <h2 class="section-title fade-in">Artists Who Called NAMA Home</h2>
+        <div class="gold-divider fade-in"></div>
+        <p class="section-subtitle fade-in">
+          NAMA's history is intertwined with the legends of American music. These are just some of the extraordinary artists who have been part of the NAMA community across its 120+ year history.
+        </p>
+
+        <div class="members-grid">
+          <div class="member-card fade-in">
+            <div class="member-card__initial">J</div>
+            <div class="member-card__name">James Reese Europe</div>
+            <div class="member-card__era">NAMA Member · 1904–1919</div>
+            <p class="member-card__desc">Pioneering Black bandleader, military officer, and jazz innovator. A central figure in the Harlem Renaissance and one of the most important early jazz musicians in American history. Known as the "Martin Luther King of music."</p>
+          </div>
+          <div class="member-card fade-in fade-in-delay-1">
+            <div class="member-card__initial">H</div>
+            <div class="member-card__name">Harlem Renaissance Artists</div>
+            <div class="member-card__era">NAMA Members · 1910s–1930s</div>
+            <p class="member-card__desc">During the golden era of the Harlem Renaissance, NAMA was the gathering place for the era's most significant Black musicians, creating a nexus of art, culture, and community that shaped American music forever.</p>
+          </div>
+          <div class="member-card fade-in fade-in-delay-2">
+            <div class="member-card__initial">C</div>
+            <div class="member-card__name">Community Musicians</div>
+            <div class="member-card__era">NAMA Members · 1904–Present</div>
+            <p class="member-card__desc">Beyond the famous names, NAMA has been home to thousands of dedicated Black musicians who built careers, supported their families, and kept Harlem's musical culture alive through dedication to their craft and community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team / Organization -->
+    <section class="section" id="organization">
+      <div class="container">
+        <div class="grid-2" style="gap:80px; align-items:center;">
+          <div class="fade-in">
+            <span class="section-label">Who We Are Today</span>
+            <h2 class="section-title" style="margin-bottom:20px;">A Volunteer-Powered<br>Community Institution</h2>
+            <div class="gold-divider"></div>
+            <p style="color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:20px; font-size:0.97rem;">
+              NAMA is coordinated entirely by the volunteer efforts of a small, dedicated group of members. With professional experience in music performance, education, administration, and community organizing, this team works diligently to keep NAMA's programs running and its mission alive.
+            </p>
+            <p style="color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:20px; font-size:0.97rem;">
+              NAMA members conceptualize and implement programming, manage fundraising efforts including the Building Renovation Fund, and serve as stewards of the organization's extraordinary legacy.
+            </p>
+            <p style="color:rgba(255,255,255,0.72); line-height:1.8; margin-bottom:32px; font-size:0.97rem;">
+              Because NAMA is 100% volunteer-operated, every dollar donated goes directly to programming, building maintenance, and community events — not administrative overhead.
+            </p>
+            <div class="btn-group">
+              <a href="support.html" class="btn btn--gold">Support Our Mission</a>
+              <a href="visit.html" class="btn btn--outline">Visit NAMA</a>
+            </div>
+          </div>
+          <div class="fade-in fade-in-delay-2">
+            <img src="images/audience.jpg" alt="NAMA community gathering" style="width:100%; height:400px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: var(--charcoal); padding:80px 0; text-align:center; border-top:1px solid rgba(201,168,76,0.15);">
+      <div class="container">
+        <span class="section-label fade-in" style="color:var(--gold);">Be Part of the Story</span>
+        <h2 class="fade-in" style="color:var(--white); margin-bottom:16px;">Help Write NAMA's Next Chapter</h2>
+        <p class="fade-in" style="color:var(--smoke); max-width:540px; margin:0 auto 36px; font-size:1rem; line-height:1.7;">
+          Whether you attend events, donate to the renovation, or spread the word — you are part of NAMA's living legacy.
+        </p>
+        <div class="btn-group flex-center fade-in">
+          <a href="support.html" class="btn btn--gold btn--lg"><i class="fa fa-heart"></i> Support the Brownstone</a>
+          <a href="events.html" class="btn btn--outline btn--lg"><i class="fa fa-calendar"></i> Attend an Event</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>New Amsterdam Musical Association</h3>
+          <p>Founded in 1904, NAMA is the oldest African-American musical organization in the United States.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/NAMA19041905/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/namaharlem/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@NAMAHarlem" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Visit &amp; Events</h4>
+          <ul>
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="visit.html">Plan Your Visit</a></li>
+            <li><a href="visit.html#directions">Directions</a></li>
+            <li><a href="visit.html#venue">Venue Rental</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Our Legacy</h4>
+          <ul>
+            <li><a href="about.html">Our History</a></li>
+            <li><a href="about.html#mission">Mission</a></li>
+            <li><a href="about.html#members">Notable Members</a></li>
+            <li><a href="support.html">Support NAMA</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+12122811350">(212) 281-1350</a></li>
+            <li><a href="mailto:info@namaharlem.org">info@namaharlem.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 New Amsterdam Musical Association. All rights reserved.</span>
+        <a href="support.html">Donate to NAMA</a>
+      </div>
+    </div>
+    <div class="footer__gold-bar"></div>
+  </footer>
+
+  <div class="toast" role="alert" aria-live="polite"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

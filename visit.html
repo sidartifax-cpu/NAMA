@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plan your visit to NAMA Harlem — 107 W 130th Street. Directions, subway access, parking, hours, venue rental and visitor FAQs.">
+  <title>Plan Your Visit — NAMA Harlem | 107 W 130th St, New York</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .transit-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .transit-card h4 {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .transit-card h4 i { font-size: 1rem; }
+    .transit-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .transit-line:last-child { margin-bottom: 0; }
+    .subway-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .subway-badge--red   { background: #e53935; color: #fff; }
+    .subway-badge--blue  { background: #1565c0; color: #fff; }
+    .subway-badge--green { background: #2e7d32; color: #fff; }
+    .subway-badge--orange{ background: #e65100; color: #fff; }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .experience-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--charcoal);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .experience-item__icon {
+      font-size: 1.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .experience-item h4 {
+      font-size: 0.9rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .experience-item p {
+      font-size: 0.82rem;
+      color: var(--smoke);
+      line-height: 1.6;
+    }
+    .venue-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .venue-spec {
+      text-align: center;
+      padding: 28px 20px;
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-lg);
+    }
+    .venue-spec__number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .venue-spec__label {
+      font-size: 0.8rem;
+      color: var(--smoke);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .contact-card {
+      background: var(--charcoal);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      text-align: center;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .contact-card h3 {
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .contact-card p {
+      color: var(--smoke);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .experience-grid { grid-template-columns: 1fr; }
+      .venue-specs { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .venue-specs { grid-template-columns: 1fr; }
+      .contact-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    🏛️ Historic Landmark at 107 W 130th Street, Harlem &nbsp;|&nbsp;
+    <a href="events.html">See This Week's Events →</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/nama-crest.png" alt="NAMA crest" class="navbar__logo-img">
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">NAMA Harlem</span>
+          <span class="navbar__logo-sub">Est. 1904 · New Amsterdam Musical Association</span>
+        </div>
+      </a>
+      <ul class="navbar__nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="visit.html" class="active">Visit</a></li>
+        <li><a href="about.html">Our Legacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="support.html" class="btn btn--burgundy btn--sm">Donate</a>
+        <button class="navbar__hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-overlay">
+    <button class="nav-overlay__close">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="visit.html">Visit NAMA</a>
+    <a href="about.html">Our Legacy</a>
+    <a href="support.html">Support &amp; Donate</a>
+    <a href="support.html" class="btn btn--gold" style="margin-top:12px">Donate Now</a>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero__breadcrumb">
+        <a href="index.html">Home</a> <span>›</span> <span>Visit NAMA</span>
+      </div>
+      <span class="section-label">Find Us in Harlem</span>
+      <h1 class="page-hero__title">Plan Your Visit</h1>
+      <p class="page-hero__subtitle">
+        Everything you need to find us, get here, and make the most of your time at the historic NAMA brownstone in Central Harlem.
+      </p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Map & Address Section -->
+    <section class="section" id="directions">
+      <div class="container">
+        <div class="grid-2" style="align-items:start; gap: 60px;">
+          <!-- Map -->
+          <div class="fade-in">
+            <div class="visit__map-container" style="height:440px;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.523!2d-73.9448!3d40.8125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f609373bb42b%3A0x4528f82f2793d9d3!2s107%20W%20130th%20St%2C%20New%20York%2C%20NY%2010027!5e0!3m2!1sen!2sus!4v1711700000000!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="NAMA location map">
+              </iframe>
+            </div>
+            <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="https://maps.google.com/?q=107+W+130th+St+New+York+NY+10027" target="_blank" rel="noopener" class="btn btn--gold btn--sm">
+                <i class="fa fa-map"></i> Open in Google Maps
+              </a>
+              <a href="https://maps.apple.com/?address=107+W+130th+St+New+York+NY+10027" target="_blank" rel="noopener" class="btn btn--outline btn--sm">
+                <i class="fa fa-map-marker-alt"></i> Open in Apple Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="fade-in fade-in-delay-1">
+            <span class="section-label">The Address</span>
+            <h2 class="section-title" style="margin-bottom:8px;">107 W 130th Street</h2>
+            <p style="color:var(--smoke); font-size:1rem; margin-bottom:32px;">New York, NY 10027 · Central Harlem<br>Between Lenox Ave (Malcolm X Blvd) &amp; 7th Ave</p>
+            <div class="gold-divider"></div>
+
+            <!-- Subway -->
+            <div class="transit-card">
+              <h4><i class="fa fa-subway"></i> Subway Directions</h4>
+              <div class="transit-line">
+                <span class="subway-badge subway-badge--red">2</span>
+                <span class="subway-badge subway-badge--red">3</span>
+                <div><strong style="color:#fff;">125th Street Station</strong><br><span style="font-size:0.82rem;">Walk 3 minutes north on Lenox Ave to 130th St</span></div>
+              </div>
+              <div class="transit-line">
+                <span class="subway-badge subway-badge--blue">A</span>
+                <span class="subway-badge subway-badge--blue">C</span>
+                <span class="subway-badge subway-badge--orange">B</span>
+                <span class="subway-badge subway-badge--orange">D</span>
+                <div><strong style="color:#fff;">135th Street Station</strong><br><span style="font-size:0.82rem;">Walk 3 minutes south to 130th St</span></div>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="visit__info-block">
+              <h4><i class="fa fa-clock"></i> Event Hours</h4>
+              <ul>
+                <li><i class="fa fa-check"></i> <strong style="color:#fff;">Wednesday:</strong> &nbsp;The Lion's Den — 9 PM to Midnight</li>
+                <li><i class="fa fa-check"></i> <strong style="color:#fff;">4th Monday:</strong> &nbsp;Monday Nite Jams — 7–11 PM</li>
+                <li><i class="fa fa-check"></i> <strong style="color:#fff;">Monthly:</strong> &nbsp;Blues &amp; Poetry — 8–11 PM</li>
+                <li><i class="fa fa-check"></i> <strong style="color:#fff;">Special Events:</strong> &nbsp;See event listings for times</li>
+              </ul>
+            </div>
+
+            <!-- Phone -->
+            <div class="visit__info-block">
+              <h4><i class="fa fa-phone"></i> Contact</h4>
+              <p>
+                <a href="tel:+12122811350" style="color:#fff; font-size:1.1rem; font-weight:600;">(212) 281-1350</a><br>
+                <a href="mailto:info@namaharlem.org" style="color:var(--gold);">info@namaharlem.org</a><br>
+                <a href="https://www.namaharlem.org" target="_blank" rel="noopener" style="color:var(--smoke); font-size:0.85rem;">www.namaharlem.org</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="section section--charcoal">
+      <div class="container">
+        <span class="section-label fade-in">First Time Here?</span>
+        <h2 class="section-title fade-in">What to Expect at NAMA</h2>
+        <div class="gold-divider fade-in"></div>
+        <p class="section-subtitle fade-in">
+          NAMA is not a nightclub or a tourist attraction. It's a living community institution. Here's what first-time visitors should know.
+        </p>
+
+        <div class="experience-grid fade-in">
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-home"></i></div>
+            <div>
+              <h4>A Historic Brownstone</h4>
+              <p>NAMA occupies a landmark brownstone at 107 W 130th St. Performances typically happen in the basement and main floor of the historic building.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-users"></i></div>
+            <div>
+              <h4>Intimate &amp; Community-Centered</h4>
+              <p>This is an intimate venue — not a large concert hall. Expect to be close to the musicians, surrounded by music lovers, locals, and community members.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-music"></i></div>
+            <div>
+              <h4>Open Jams Welcome All</h4>
+              <p>Wednesday's Lion's Den jam is open to all musicians. Bring your instrument. The house band will make space. No audition required.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-dollar-sign"></i></div>
+            <div>
+              <h4>Affordable Entry</h4>
+              <p>Most events are $10–$35. Many community nights are free or donation-based. NAMA believes music should be accessible to everyone.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-heart"></i></div>
+            <div>
+              <h4>Volunteer-Powered</h4>
+              <p>NAMA is run entirely by volunteers. Consider donating or becoming a member to help sustain this extraordinary organization.</p>
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-item__icon"><i class="fa fa-universal-access"></i></div>
+            <div>
+              <h4>Accessibility</h4>
+              <p>Please contact us ahead of your visit regarding accessibility needs. We are committed to making NAMA welcoming and accessible for everyone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Rental -->
+    <section class="section" id="venue">
+      <div class="container">
+        <span class="section-label fade-in">Private Events</span>
+        <h2 class="section-title fade-in">Rent the Historic NAMA Space</h2>
+        <div class="gold-divider fade-in"></div>
+        <p class="section-subtitle fade-in">
+          Host your event in one of Harlem's most historic and culturally significant venues. Perfect for music events, receptions, film screenings, private dinners, corporate gatherings and more.
+        </p>
+
+        <div class="venue-specs fade-in">
+          <div class="venue-spec">
+            <div class="venue-spec__number">~200</div>
+            <div class="venue-spec__label">Guest Capacity</div>
+          </div>
+          <div class="venue-spec">
+            <div class="venue-spec__number">1904</div>
+            <div class="venue-spec__label">Year Established</div>
+          </div>
+          <div class="venue-spec">
+            <div class="venue-spec__number">NYC</div>
+            <div class="venue-spec__label">Historic Landmark</div>
+          </div>
+        </div>
+
+        <div class="rental-features fade-in">
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-music"></i></div>
+            <h4>Live Music Events</h4>
+            <p>Full stage and PA system. Perfect for concerts, showcases, listening parties and music events.</p>
+          </div>
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-film"></i></div>
+            <h4>Film &amp; Screenings</h4>
+            <p>Atmospheric space for film premieres, screenings, and documentary events with a cultural backdrop.</p>
+          </div>
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-glass-cheers"></i></div>
+            <h4>Receptions &amp; Galas</h4>
+            <p>Host your reception in a Historic Landmark. A unique, unforgettable setting in the heart of Harlem.</p>
+          </div>
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-graduation-cap"></i></div>
+            <h4>Workshops &amp; Education</h4>
+            <p>Educational gatherings, masterclasses, panels, and community workshops in NAMA's iconic space.</p>
+          </div>
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-briefcase"></i></div>
+            <h4>Corporate Events</h4>
+            <p>Team events, networking nights, and company gatherings with authentic Harlem cultural character.</p>
+          </div>
+          <div class="rental-feature">
+            <div class="rental-feature__icon"><i class="fa fa-camera"></i></div>
+            <h4>Photography &amp; Film</h4>
+            <p>The brownstone exterior and interior provide a stunning backdrop for shoots and productions.</p>
+          </div>
+        </div>
+
+        <div class="contact-card fade-in mt-60">
+          <h3>Interested in Renting the NAMA Space?</h3>
+          <p>Contact us to discuss availability, pricing, and logistics. We'll work with you to make your event extraordinary.</p>
+          <div class="contact-links">
+            <a href="tel:+12122811350" class="btn btn--gold">
+              <i class="fa fa-phone"></i> Call (212) 281-1350
+            </a>
+            <a href="mailto:info@namaharlem.org" class="btn btn--outline">
+              <i class="fa fa-envelope"></i> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--charcoal" id="faq">
+      <div class="container">
+        <div class="grid-2" style="gap:80px; align-items:start;">
+          <div>
+            <span class="section-label fade-in">Know Before You Go</span>
+            <h2 class="section-title fade-in">Visitor FAQs</h2>
+            <div class="gold-divider fade-in"></div>
+            <p class="section-subtitle fade-in" style="max-width:100%;">
+              Got questions about visiting NAMA? Here are answers to the most common things first-time visitors ask.
+            </p>
+
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Do I need to make a reservation to attend?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>For most weekly events like The Lion's Den and Monday Nite Jams, you can walk in. For special events and galas, we recommend checking the event listing and RSVP'ing early as capacity is limited.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Is there a dress code?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>No strict dress code — come as you are. Many visitors enjoy dressing up a little to honor the spirit of Harlem's musical tradition, but jeans and casual wear are completely welcome.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Can I bring my instrument to the Wednesday jam?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>Absolutely — that's the whole point! The Lion's Den is an open jam. The house band leads the session but all musicians are encouraged to sit in. Just show up, introduce yourself, and play.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Is there parking nearby?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>Street parking is available on W 130th St and surrounding blocks. We strongly recommend taking the subway (2/3 to 125th or A/C/B/D to 135th) as Harlem street parking can be limited on event nights.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>Are kids welcome at NAMA events?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>Many of our afternoon and community events are family-friendly. Some evening events may have age restrictions depending on the programming. Check individual event listings or call us at (212) 281-1350 to confirm.</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h4>How can I support NAMA beyond attending events?</h4>
+                  <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                </div>
+                <div class="faq-answer">
+                  <p>You can donate to the Brownstone Renovation Fund, become a member, or volunteer with the organization. Every contribution — large or small — helps sustain 120+ years of Harlem music legacy. Visit our <a href="support.html">Support page</a> to learn more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in fade-in-delay-2">
+            <img src="images/brownstone-day.jpg" alt="NAMA brownstone exterior" style="border-radius: var(--radius-lg); width:100%; object-fit:cover; box-shadow: var(--shadow-lg);">
+            <div style="margin-top: 28px; background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.2); border-radius: var(--radius-lg); padding: 28px 32px;">
+              <h4 style="color:var(--gold); font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:14px;">
+                <i class="fa fa-map-marker-alt"></i> &nbsp;Find Us
+              </h4>
+              <p style="color:var(--white); font-size:1.1rem; font-weight:600; margin-bottom:4px;">107 West 130th Street</p>
+              <p style="color:var(--smoke); font-size:0.9rem; margin-bottom:18px;">New York, NY 10027 — Central Harlem</p>
+              <p style="color:var(--smoke); font-size:0.85rem; margin-bottom:4px;"><i class="fa fa-phone" style="color:var(--gold); width:16px;"></i> (212) 281-1350</p>
+              <p style="color:var(--smoke); font-size:0.85rem;"><i class="fa fa-envelope" style="color:var(--gold); width:16px;"></i> info@namaharlem.org</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section style="background: var(--burgundy); padding: 80px 0; text-align:center;">
+      <div class="container">
+        <span class="section-label fade-in" style="color:var(--gold-lt);">You're Almost Here</span>
+        <h2 class="fade-in" style="color:var(--white); margin-bottom:16px;">Ready to Experience NAMA?</h2>
+        <p class="fade-in" style="color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 36px; font-size:1rem; line-height:1.7;">
+          See what's happening this week and plan your visit to Harlem's most historic music destination.
+        </p>
+        <div class="btn-group flex-center fade-in">
+          <a href="events.html" class="btn btn--gold btn--lg"><i class="fa fa-calendar"></i> See Upcoming Events</a>
+          <a href="support.html" class="btn btn--outline-white btn--lg"><i class="fa fa-heart"></i> Support NAMA</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>New Amsterdam Musical Association</h3>
+          <p>Founded in 1904. Harlem's oldest African-American musical organization, still going strong after 120+ years.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/NAMA19041905/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/namaharlem/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@NAMAHarlem" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Visit &amp; Events</h4>
+          <ul>
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="visit.html">Plan Your Visit</a></li>
+            <li><a href="visit.html#directions">Directions</a></li>
+            <li><a href="visit.html#venue">Venue Rental</a></li>
+            <li><a href="visit.html#faq">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">Our History</a></li>
+            <li><a href="about.html#mission">Mission</a></li>
+            <li><a href="support.html">Support NAMA</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+12122811350">(212) 281-1350</a></li>
+            <li><a href="mailto:info@namaharlem.org">info@namaharlem.org</a></li>
+            <li><a style="color:var(--smoke); cursor:default;">107 W 130th St, NY 10027</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 New Amsterdam Musical Association. All rights reserved.</span>
+        <a href="support.html">Donate to NAMA</a>
+      </div>
+    </div>
+    <div class="footer__gold-bar"></div>
+  </footer>
+
+  <div class="toast" role="alert" aria-live="polite"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
